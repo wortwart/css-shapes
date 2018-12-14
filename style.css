@@ -1,0 +1,112 @@
+body {
+	max-width: 1000px;
+	margin: auto;
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica;
+	background-color: #000;
+	color: #eee;
+}
+
+section {
+	width: 500px;
+	clear: left;
+}
+
+.shape {
+	display: flex;
+	float: left;
+	clear: both;
+	height: 250px;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.shape:hover {
+	background-color: grey;
+	background-color: rgba(250, 250, 0, .4);
+}
+
+.shape.margin {
+	shape-margin: 20px;
+}
+
+.circle {
+	shape-outside: circle(125px);
+}
+.circle-center {
+	shape-outside: circle(160px at 33% 75%);
+}
+.ellipsis {
+	shape-outside: ellipse(125px 80px at 40% 50%);
+}
+.inset {
+	shape-outside: inset(60px 30px 60px 0);
+}
+.polygon {
+	shape-outside: polygon(0 0, 100% 50%, 50% 100%, 0 100%);
+}
+
+img.shape, .shape.image {
+	shape-image-threshold: 0.5;
+	shape-margin: 10px;
+	width: 335px;
+	height: 252px;
+}
+[src="logo.svg"], .shape.image {
+	shape-outside: url(logo.svg);
+}
+[src="logo.png"] {
+	shape-outside: url(logo.png);
+}
+[src="logo.gif"] {
+	shape-outside: url(logo.gif);
+}
+[src="circle.svg"], svg {
+	/*shape-outside: attr(src url);*/
+	shape-outside: url(circle.svg);
+	shape-image-threshold: 0;
+}
+
+.shape2 {
+	float: left;
+	clear: both;
+	height: 250px;
+	width: 250px;
+	shape-margin: 0px;
+}
+
+.bordered {
+	display: block;
+	height: 120px;
+	padding: 20px;
+	border: 1px solid white;
+	border-radius: 120px;
+	shape-outside: border-box;
+	shape-margin: .5em;
+	margin-right: .5em;
+	overflow: hidden;
+}
+
+.clip {
+	float: left;
+	clear: both;
+	clip-path: circle(50%);
+	height: 150px;
+	width: 150px;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebyside {
+	max-width: 1050px;
+}
+.sidebyside section {
+	float: left;
+	clear: none;
+}
+.sidebyside section:not(:last-child) {
+	margin-right: 50px;
+}
